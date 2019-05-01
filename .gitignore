@@ -1,0 +1,5 @@
+# texコンパイルで必要なもの以外は管理対象にしない
+*
+!.gitignore
+!docker-compose.yml
+!.latexmkrc
