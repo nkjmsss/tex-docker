@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 $latex            = 'uplatex -halt-on-error -file-line-error %O %S';
-$out_dir          = 'tmp';
+$out_dir          = 'dist';
 $bibtex           = 'upbibtex';
 $dvipdf           = 'dvipdfmx %O -o %D %S';
 $makeindex        = 'upmendex %O -o %D %S';
