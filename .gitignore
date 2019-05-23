@@ -3,4 +3,3 @@
 !.gitignore
 !docker-compose.yml
 !.latexmkrc
-!main.tex
