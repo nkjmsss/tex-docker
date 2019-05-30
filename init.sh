@@ -15,22 +15,20 @@ cat <<EOF > main.tex
 % コードの表示
 \usepackage{listings}
 \lstset{
-    basicstyle={\ttfamily},
-    identifierstyle={\small},
-    commentstyle={\smallitshape},
-    keywordstyle={\small\bfseries},
-    ndkeywordstyle={\small},
-    stringstyle={\small\ttfamily},
-    frame={tb},
-    breaklines=true,
+    basicstyle = {\ttfamily\scriptsize},
+    breaklines = true,
     columns=[l]{fullflexible},
+    commentstyle = {\itshape \color[cmyk]{1,0.4,1,0}},
+    frame={tb},
+    keywordstyle = {\bfseries \color[cmyk]{0,1,0,0}},
     numbers=left,
-    xrightmargin=0zw,
-    xleftmargin=3zw,
-    numberstyle={\scriptsize},
-    stepnumber=1,
     numbersep=1zw,
-    lineskip=-0.5ex
+    numberstyle = {\tiny},
+    stepnumber=1,
+    stringstyle = {\ttfamily \color[cmyk]{0,0.6,1,0}},
+    tabsize = 4,
+    xleftmargin=3zw,
+    xrightmargin=0zw,
 }
 \renewcommand{\lstlistingname}{プログラム}
 \title{\huge title}
