@@ -7,7 +7,9 @@
 GITHUB_USER="nkjmsss"
 GITHUB_REPO="tex-docker"
 GITHUB_URL="${GITHUB_USER}/${GITHUB_REPO}"
-DIST_PATH="$(pwd)/tex"
+
+DIST_DIR="tex"
+DIST_PATH="$(pwd)/${DIST_DIR}"
 
 # ===========================
 # utils
@@ -266,4 +268,4 @@ cleanup() {
 
 download
 cleanup
-cd $DIST_PATH
+e_newline && e_arrow "cd ${DIST_DIR}"
