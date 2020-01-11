@@ -39,3 +39,7 @@ cat <<EOF > main.tex
 \maketitle
 \end{document}
 EOF
+
+cat <<EOF > .gitignore
+dist
+EOF

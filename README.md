@@ -1,6 +1,13 @@
 # tex with docker
 
-## compile with VSCode (suggested)
+## initialize
+
+```shell
+$ curl -fsSL https://raw.githubusercontent.com/nkjmsss/tex-docker/master/init.sh | sh
+```
+
+## Compile
+### VSCode (suggested)
 
 add below to settings.json
 
@@ -33,7 +40,9 @@ add below to settings.json
 "latex-workshop.view.pdf.viewer": "tab",
 ```
 
-## compile with docker-compose
+### docker-compose
+
+NOTE: tex entry file is `main.tex`
 
 ```shell
 $ docker-compose up
