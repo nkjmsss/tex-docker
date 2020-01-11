@@ -248,11 +248,12 @@ download() {
 
 cleanup() {
   e_newline
-  e_header "Cleaning up the directory"
+  e_header "Cleaning up the directory..."
 
   rm -rf "${DIST_PATH}/bin"
+
+  e_newline && e_done "Clean up"
 }
 
 download
-sh -fc "${DIST_PATH}/bin/init"
 cleanup
