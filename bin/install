@@ -250,10 +250,14 @@ cleanup() {
   e_newline
   e_header "Cleaning up the directory..."
 
-  rm -rf "${DIST_PATH}/bin"
+  rm -rf "${DIST_PATH}/bin" "${DIST_PATH}/.git"
+  if is_exists "git"; then
+    git init
+  fi
 
   e_newline && e_done "Clean up"
 }
 
 download
 cleanup
+cd $DIST_PATH
