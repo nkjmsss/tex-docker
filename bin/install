@@ -252,7 +252,13 @@ cleanup() {
 
   rm -rf "${DIST_PATH}/bin" "${DIST_PATH}/.git"
   if is_exists "git"; then
+    pushd $DIST_PATH
+
     git init
+    git add .
+    git commit -m ":tada: Initial commit"
+
+    popd
   fi
 
   e_newline && e_done "Clean up"
