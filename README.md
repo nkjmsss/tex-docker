@@ -3,7 +3,7 @@
 ## initialize
 
 ```shell
-$ curl -fsSL https://raw.githubusercontent.com/nkjmsss/tex-docker/master/init.sh | sh
+$ curl -fsSL https://raw.githubusercontent.com/nkjmsss/tex-docker/master/bin/install | sh
 ```
 
 ## Compile

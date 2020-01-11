@@ -1,9 +1,2 @@
-# texコンパイルで必要なもの以外は管理対象にしない
-*
-!*/
-!.gitignore
-!docker-compose.yml
-!.latexmkrc
-!README.md
-!bin/*
-!*/.gitkeep
+dist/*
+!dist/*.pdf
