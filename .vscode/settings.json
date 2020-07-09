@@ -1,0 +1,26 @@
+{
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "compile",
+      "tools": [
+        "ptex2pdf"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "ptex2pdf",
+      "command": "sh",
+      "args": [
+        "%DIR%compile.sh",
+        "%DOC%"
+      ]
+    }
+  ],
+
+  "latex-workshop.latex.autoBuild.run": "onFileChange",
+  "latex-workshop.docker.enabled": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.outDir": "%DIR%/dist",
+  "latex-workshop.message.update.show": false,
+}
