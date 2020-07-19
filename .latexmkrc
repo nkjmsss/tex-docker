@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 $latex            = 'uplatex -file-line-error -interaction=nonstopmode -halt-on-error %O %S';
 $out_dir          = 'dist';
-$bibtex           = 'upbibtex';
+$bibtex           = 'upbibtex %O %B';
 $dvipdf           = 'dvipdfmx %O -o %D %S';
 $makeindex        = 'upmendex %O -o %D %S';
 $max_repeat       = 5;
