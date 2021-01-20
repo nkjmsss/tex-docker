@@ -11,4 +11,4 @@ $pdf_mode     = 3; # generates pdf via dvipdfmx
 $pvc_view_file_via_temporary = 0;
 $pdf_previewer    = "ls";       # because we use latexmk in a docker container
 
-ensure_path( 'TEXINPUTS', './/' );
+ensure_path( 'TEXINPUTS', './cls//' );
