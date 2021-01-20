@@ -1,10 +1,16 @@
+\RequirePackage{plautopatch}
 \documentclass[uplatex, dvipdfmx]{jsarticle}
 \input src/preemble.tex
 
-\begin{document}
-\maketitle
-\input src/body.tex
+% タイトル等の設定
+\title{\huge title}
+\author{author}
+\date{\today}
 
-\bibliographystyle{unsrt}
-\bibliography{reference}
+\begin{document}
+  \maketitle
+  \input src/body.tex
+
+  \bibliographystyle{unsrt}
+  \bibliography{src/reference}
 \end{document}
