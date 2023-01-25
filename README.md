@@ -7,3 +7,8 @@ Tex 環境をローカルに構築することなく、ローカルで書ける�
 ```perl
 $latex = "find . -type f -name '*.tex' -print0 | xargs -0 sed -i '' -e 's/、/，/g' -e 's/。/．/g'; uplatex";
 ```
+
+## Requirements
+
+- Docker
+- VSCode
