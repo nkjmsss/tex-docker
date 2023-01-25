@@ -1,32 +1,54 @@
 {
+  "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/out",
   "latex-workshop.latex.recipes": [
     {
       "name": "compile",
-      "tools": [
-        "ptex2pdf"
-      ]
-    }
+      "tools": ["compile"]
+    },
   ],
+  // https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile#placeholders
   "latex-workshop.latex.tools": [
     {
-      "name": "ptex2pdf",
+      "name": "compile",
       "command": "sh",
       "args": [
-        "%DIR%compile.sh",
-        "%DOC%"
+        "-c",
+        "id=$(docker create --rm -v %OUTDIR%:/workdir/out paperist/texlive-ja:alpine latexmk /workdir/%RELATIVE_DOC%); docker cp %WORKSPACE_FOLDER%/. \"$id:/workdir/\"; docker start -ia $id",
       ]
-    }
+    },
+  ],
+  "latex-workshop.latex.rootFile.useSubFile": true,
+  "latex-workshop.latex.rootFile.doNotPrompt": true,
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+    "*.dvi",
+    "*.synctex.gz",
+    "*.tdo"
   ],
 
-  "latex-workshop.latex.autoBuild.run": "onFileChange",
-  "latex-workshop.docker.enabled": true,
-  "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.latex.outDir": "%DIR%/dist",
-  "latex-workshop.message.update.show": false,
-
-  "pasteImage.basePath": "${projectRoot}/img",
-  "pasteImage.path": "${projectRoot}/img",
-  // "pasteImage.prefix": "\\begin{figure}[H]\n\\centering\n\\includegraphics[width=0.8\\linewidth]{",
-  // "pasteImage.suffix": "}\n\\caption{caption}\n\\label{fig:label}\n\\end{figure}",
-  "pasteImage.forceUnixStyleSeparator": true,
+  "[latex]": {
+    // label の表示の有無
+    "outline.showMethods": false
+  }
 }

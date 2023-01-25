@@ -1,9 +1,0 @@
-version: "2.2"
-services:
-  tex:
-    image: paperist/alpine-texlive-ja
-    volumes:
-      - .:/workdir
-    tty: true
-    init: true
-    command: latexmk -pvc main.tex

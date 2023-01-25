@@ -1,21 +1,9 @@
-# tex with docker
+# Tex + Docker in VSCode
 
-## initialize
+Tex 環境をローカルに構築することなく、ローカルで書けるようにするテンプレートです。
 
-```shell
-$ curl -fsSL https://raw.githubusercontent.com/nkjmsss/tex-docker/master/bin/install | sh
-```
+論文では句読点を「，．」とすることが好まれますが、通常の日本語では「、。」を使いますし、視認性も高いので以下のようにしてコンパイル時に変換させています。私はソースコードを変更したくないのでDockerで頑張っていますが、ソースコードを変更していいならRemoteContainerで構成するといいかもしれません。素直にそっちにすると、 `latexindent` 等が使えます。
 
-## How to Compile
-
-### VSCode (suggested)
-
-Install `LaTeX Workshop` plugin. `Paste Image` plugin might be useful too.
-
-### docker-compose
-
-NOTE: tex entry file is `main.tex`
-
-```shell
-$ docker-compose up
+```perl
+$latex = "find . -type f -name '*.tex' -print0 | xargs -0 sed -i '' -e 's/、/，/g' -e 's/。/．/g'; uplatex";
 ```

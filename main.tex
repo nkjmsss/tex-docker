@@ -1,16 +1,49 @@
-\RequirePackage{plautopatch}
 \documentclass[uplatex, dvipdfmx]{jsarticle}
-\input src/preemble.tex
 
-% タイトル等の設定
-\title{\huge title}
+\usepackage{subfiles}
+\providecommand{\main}{.}
+\providecommand{\bibinsubfile}{}
+
+% 数式関係
+\usepackage{amsmath}
+\allowdisplaybreaks
+
+% cleverref
+\usepackage{cleveref}
+\crefformat{chapter}{第#2#1#3章}
+\crefformat{section}{#2#1#3節}
+\crefformat{subsection}{#2#1#3節}
+\crefname{figure}{図}{図}
+\crefname{table}{表}{表}
+\crefname{equation}{式}{式}
+\crefname{appendix}{付録}{付録}
+\newcommand{\crefpairconjunction}{, }
+\newcommand{\crefrangeconjunction}{〜}
+
+% todo管理
+\usepackage[obeyDraft]{todonotes}
+\presetkeys{todonotes}{inline}{}
+
+% 画像
+\usepackage{graphicx}
+
+% 表
+\usepackage{multirow}
+
+% =======================
+\title{title}
 \author{author}
 \date{\today}
+% =======================
 
 \begin{document}
-  \maketitle
-  \input src/body.tex
 
-  \bibliographystyle{unsrt}
-  \bibliography{src/reference}
+% todo一覧
+\listoftodos
+
+\subfile{\main/text/chapter1}
+
+\bibliography{reference}
+\bibliographystyle{junsrt}
+
 \end{document}
